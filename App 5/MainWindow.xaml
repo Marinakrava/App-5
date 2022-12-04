@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:App_5"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.CommandBindings>
+        <CommandBinding Command="local:MyCommands.Exit" Executed="ExitExicuted"/>
+        <CommandBinding Command="Open" Executed="OpenExecuted"/>
+        <CommandBinding Command="Save" Executed="SaveExecuted"/>
+    </Window.CommandBindings>
+    
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -14,10 +20,10 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" Margin="5" Padding="5">
             <MenuItem Header="_Файл">
-                <MenuItem Header="_Открыть" Click="MenuItem_Click"/>
-                <MenuItem Header="_Сохранить" Click="MenuItem_Click_1"/>
+                <MenuItem Header="_Открыть" Command ="ApplicationCommands.Open"/>
+                <MenuItem Header="_Сохранить" Command ="ApplicationCommands.Save"/>
                 <Separator/>
-                <MenuItem Header="_Закрыть" Click="MenuItem_Click_2"/>
+                <MenuItem Header="_Закрыть" Command="local:MyCommands.Exit"/>
             </MenuItem>
             
         </Menu>

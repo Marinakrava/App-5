@@ -123,5 +123,20 @@ namespace App_5
         {
             Application.Current.Shutdown();
         }
+
+        private void ExitExicuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void OpenExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("Документ открыт");
+        }
+
+        private void SaveExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("Документ сохранен");
+        }
     }
 }
